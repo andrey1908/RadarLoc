@@ -87,15 +87,15 @@ if __name__ == '__main__':
         test_set.save(file_path_name)
 
         # Evaluation datasets with LiDAR point clouds
-        map_ds = RobotCarDataset(args.dataset_root, [map_sequence], split='all',
-                                 min_displacemenet=args.min_displacement, use_radar=False, use_lidar=True)
-        query_ds = RobotCarDataset(args.dataset_root, [query_sequence], split='all',
-                                   min_displacemenet=args.min_displacement, use_radar=False, use_lidar=True)
+        # map_ds = RobotCarDataset(args.dataset_root, [map_sequence], split='all',
+        #                          min_displacemenet=args.min_displacement, use_radar=False, use_lidar=True)
+        # query_ds = RobotCarDataset(args.dataset_root, [query_sequence], split='all',
+        #                            min_displacemenet=args.min_displacement, use_radar=False, use_lidar=True)
 
-        test_set = generate_evaluation_set(map_ds, query_ds, dist_threshold=args.dist_threshold)
-        pickle_name = f'test_L_{map_sequence}_{query_sequence}.pickle'
+        # test_set = generate_evaluation_set(map_ds, query_ds, dist_threshold=args.dist_threshold)
+        # pickle_name = f'test_L_{map_sequence}_{query_sequence}.pickle'
 
-        file_path_name = os.path.join(args.dataset_root, pickle_name)
-        test_set.save(file_path_name)
+        # file_path_name = os.path.join(args.dataset_root, pickle_name)
+        # test_set.save(file_path_name)
 
         print('')
