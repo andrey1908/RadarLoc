@@ -27,16 +27,17 @@ RUN pip3 install --upgrade \
     pip
 
 RUN pip3 install \
-    setuptools \
+    numpy \
     ninja \
-    torch \
+    torch==1.10.1 \
     torchvision \
     torchaudio \
     pytorch_metric_learning \
     wandb \
     opencv-python
 
-RUN pip3 install -U MinkowskiEngine --install-option="--blas=openblas" -v --no-deps
+RUN export MAX_JOBS=$NUM_THREADS && \
+    pip3 install -U MinkowskiEngine --install-option="--blas=openblas" -v --no-deps
 
  # User setup
 ARG USER=docker_radar_loc
